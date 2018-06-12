@@ -16,6 +16,7 @@ GKE automatically exposes NodePorts through a Loadbalancer, but the 'correct' wa
 Google cloud need an address created. All the steps running gcloud commands, are unusual and can be disregarded for a normal Kubernetes setup outside of GKE. 
 
 ```
+gcloud config set project praqma-education
 gcloud compute addresses create <my-name> --global
 ```
 Ingress can be told by annotation, where the source request came from. This is useful when going through multiple networks, as the ingress rule then understand things like sticky sessions and other networking things like SSL termination and so on. 
